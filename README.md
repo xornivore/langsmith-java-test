@@ -10,41 +10,28 @@ This project demonstrates how to use the LangSmith Java SDK with published JARs 
 
 ## Setup
 
-1. Clone this repository:
-```bash
-git clone <your-repo-url>
-cd langchain-java-test
-```
+- Set your LangSmith API key as an environment variable:
 
-2. Set your LangSmith API key as an environment variable:
 ```bash
 export LANGSMITH_API_KEY=your_api_key
 ```
 
 Optionally, you can also set:
+
 ```bash
 export LANGSMITH_ENDPOINT=https://api.smith.langchain.com  # Optional, defaults to this
 export LANGSMITH_PROJECT_ID=your-project-id  # Required for ListRunsExample
 ```
 
-## Running Examples
+### List Runs Example
 
-### Dataset Example
-
-Creates a dataset, adds examples, and then deletes it:
+Queries and lists runs from a LangSmith project:
 
 ```bash
 ./gradlew run
 ```
 
 Or explicitly:
-```bash
-./gradlew run --main-class=com.langchain.smith.example.DatasetExampleKt
-```
-
-### List Runs Example
-
-Queries and lists runs from a LangSmith project:
 
 ```bash
 export LANGSMITH_PROJECT_ID=your-project-id
@@ -59,11 +46,11 @@ This project uses the published LangSmith Java SDK from Maven Central:
 implementation("com.langchain.smith:langsmith-java:0.1.0-alpha.12")
 ```
 
-See: https://central.sonatype.com/artifact/com.langchain.smith/langsmith-java/0.1.0-alpha.12
+See: <https://central.sonatype.com/artifact/com.langchain.smith/langsmith-java/0.1.0-alpha.12>
 
 ## Project Structure
 
-```
+```text
 .
 ├── build.gradle.kts          # Gradle build configuration
 ├── settings.gradle.kts        # Gradle settings
@@ -88,6 +75,7 @@ See: https://central.sonatype.com/artifact/com.langchain.smith/langsmith-java/0.
 ### DatasetExample
 
 Demonstrates:
+
 - Checking if a dataset exists by name
 - Creating a new dataset
 - Adding individual examples with inputs and outputs
@@ -98,6 +86,7 @@ Demonstrates:
 ### ListRunsExample
 
 Demonstrates:
+
 - Configuring run query parameters with filters
 - Querying runs by project/session ID
 - Iterating through and displaying run information
@@ -107,4 +96,3 @@ Demonstrates:
 - [LangSmith Documentation](https://docs.langchain.com/langsmith)
 - [LangSmith Java SDK GitHub](https://github.com/langchain-ai/langsmith-java)
 - [Maven Central - langsmith-java](https://central.sonatype.com/artifact/com.langchain.smith/langsmith-java/0.1.0-alpha.12)
-
